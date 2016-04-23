@@ -1,25 +1,117 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F24b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CalculadoraIMC" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC" customClass="UIControl">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculadora de índice de masa corporal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLV-1G-E3b">
+                                <rect key="frame" x="149" y="56" width="302" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rom-u5-nJZ">
+                                <rect key="frame" x="232" y="129" width="137" height="205"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Altura" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig6-b8-qxA">
+                                        <rect key="frame" x="45" y="130" width="46" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JKi-OL-9Tr">
+                                        <rect key="frame" x="20" y="165" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="ets-25-muI"/>
+                                        </connections>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ioq-TO-547">
+                                        <rect key="frame" x="20" y="42" width="97" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="97" id="m5w-87-MbQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                        <connections>
+                                            <action selector="textFieldDoneEditing:" destination="BYZ-38-t0r" eventType="editingDidEndOnExit" id="CdV-EM-Igw"/>
+                                        </connections>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peso" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VTq-jz-UNW">
+                                        <rect key="frame" x="49" y="8" width="38" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JKi-OL-9Tr" firstAttribute="top" secondItem="Ig6-b8-qxA" secondAttribute="bottom" constant="14" id="AEg-4d-h1U"/>
+                                    <constraint firstAttribute="bottom" secondItem="JKi-OL-9Tr" secondAttribute="bottom" constant="10" id="CET-kk-Vfc"/>
+                                    <constraint firstAttribute="trailing" secondItem="ioq-TO-547" secondAttribute="trailing" constant="20" id="DAy-yU-ffX"/>
+                                    <constraint firstItem="Ig6-b8-qxA" firstAttribute="centerX" secondItem="JKi-OL-9Tr" secondAttribute="centerX" id="YGS-dZ-Kgf"/>
+                                    <constraint firstItem="VTq-jz-UNW" firstAttribute="centerX" secondItem="Rom-u5-nJZ" secondAttribute="centerX" constant="-1" id="aVJ-GQ-cna"/>
+                                    <constraint firstItem="ioq-TO-547" firstAttribute="top" secondItem="VTq-jz-UNW" secondAttribute="bottom" constant="13" id="aaZ-7V-dLI"/>
+                                    <constraint firstItem="Ig6-b8-qxA" firstAttribute="top" secondItem="ioq-TO-547" secondAttribute="bottom" constant="58" id="cGB-pG-Vnn"/>
+                                    <constraint firstItem="ioq-TO-547" firstAttribute="trailing" secondItem="JKi-OL-9Tr" secondAttribute="trailing" id="f6v-X3-Fdx"/>
+                                    <constraint firstItem="VTq-jz-UNW" firstAttribute="top" secondItem="Rom-u5-nJZ" secondAttribute="top" constant="8" id="fxA-1R-Iot"/>
+                                    <constraint firstItem="ioq-TO-547" firstAttribute="leading" secondItem="Rom-u5-nJZ" secondAttribute="leading" constant="20" id="vW4-cF-fiF"/>
+                                    <constraint firstItem="ioq-TO-547" firstAttribute="leading" secondItem="JKi-OL-9Tr" secondAttribute="leading" id="yeS-4U-BK5"/>
+                                    <constraint firstItem="VTq-jz-UNW" firstAttribute="centerX" secondItem="ioq-TO-547" secondAttribute="centerX" id="yef-5P-AxE"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fjw-xT-bew">
+                                <rect key="frame" x="272" y="362" width="56" height="30"/>
+                                <state key="normal" title="Calcular"/>
+                                <connections>
+                                    <action selector="calcular:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VXk-2v-mgB"/>
+                                </connections>
+                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mqf-WR-cWg">
+                                <rect key="frame" x="180" y="108" width="240" height="258"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Rom-u5-nJZ" secondAttribute="bottom" constant="266" id="WMd-y4-QWx"/>
+                            <constraint firstItem="Rom-u5-nJZ" firstAttribute="top" secondItem="pLV-1G-E3b" secondAttribute="bottom" constant="52" id="cvi-IP-Jaz"/>
+                            <constraint firstItem="Rom-u5-nJZ" firstAttribute="centerX" secondItem="pLV-1G-E3b" secondAttribute="centerX" constant="1" id="dhR-id-rGS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Fjw-xT-bew" secondAttribute="bottom" constant="208" id="m40-sX-2yJ"/>
+                            <constraint firstItem="pLV-1G-E3b" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nZW-SW-vPm"/>
+                            <constraint firstItem="Fjw-xT-bew" firstAttribute="centerX" secondItem="Rom-u5-nJZ" secondAttribute="centerX" constant="-1" id="qQT-rj-qMh"/>
+                            <constraint firstItem="pLV-1G-E3b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36" id="s2D-oA-8Nb"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="mqf-WR-cWg"/>
+                            </mask>
+                        </variation>
+                        <connections>
+                            <action selector="bgTap:" destination="BYZ-38-t0r" eventType="touchDown" id="V3z-Zo-sj8"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="altura" destination="JKi-OL-9Tr" id="vV6-NR-dAZ"/>
+                        <outlet property="peso" destination="ioq-TO-547" id="Tw6-5F-JdY"/>
+                        <outlet property="scroll" destination="Rom-u5-nJZ" id="O0L-XB-hnQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="240" y="436"/>
         </scene>
     </scenes>
 </document>
